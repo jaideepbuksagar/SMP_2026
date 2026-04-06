@@ -1,0 +1,14 @@
+Pretext for the course Simulation of Mechanical Processes
+
+The course mainly focuses on 3 aspects:
+- Numerical methods for solving ODEs & PDEs
+- Monte Carlo Simulations
+- Discrete Element Models (FEA)
+
+Theories required along the duratin of the course
+1. Statistics
+2. Probability Theory
+3. ODE & PDE (Real & Complex Analysis)
+4. Solid Mechanics
+5. Collision kinematics
+6. Python or MATLAB
