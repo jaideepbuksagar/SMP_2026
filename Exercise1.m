@@ -1,27 +1,36 @@
-clear all;
-flip_count = [5, 1000];
-average = zeros(1,1000);
-for i=5:1000:
-  average [i]= calculate_average(coinflip_count);
-end
-print(average);
+clc, clearvars
 
+% Input variables
 
-function average = calculate_average(coinflip_count)
-    #Calculate average over a set of coinfips
+number_of_coinflips = 10000;
 
-    #Initiate
+%Initialization
+
+%Calculation of mean estimator
+
+mean_estimator = calculate_mean_estimator(number_of_coinflips);
+
+mean_estimator
+
+function mean_estimator = calculate_mean_estimator(number_of_coinflips)
+
+    % Initialization of variables
 
     coinflip_sum = 0;
-    coinflip_values = zeros(1,coinflip_count);
+    coinflip_values = zeros(1,number_of_coinflips);
 
-    #Mainloop
+    % Assigning random values and summing them up
 
-    for i=1:coinflip_count
-        random_number   = rand;
-        coinflip_value(i)   = round(random_number);
-        coinflip_sum    = coinflip_sum + coinflip_values(i);
+    for i=1: number_of_coinflips
+        
+        temporary_coinflip_value  = rand;
+        coinflip_values(i)        = round(temporary_coinflip_value);
+        coinflip_sum              = coinflip_sum + coinflip_values(i);
+
+        i = i+1;
     end
 
-    average = coinflip_sum/coinflip_count;
+    % Calculation of the estimator value
+    mean_estimator = coinflip_sum/number_of_coinflips;
+
 end
